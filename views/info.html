@@ -5,11 +5,46 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ @title }}</title>
 </head>
 <body>
 
-<h1>week6 Preview!</h1>
+<h1>{{ @title }}</h1>
+<p>My favorite color is {{ @color }}</p>
+<p>My favorite food is {{ @food }}</p>
+
+<h2>Temperature</h2>
+<p>Fahrenheit: {{ @temp }} degrees</p>
+<p>Celsius: {{ round((@temp-32) * (5.0/9.0), 2) }}</p>
+
+<!--Template: print the circumference of the circle
+    C = 2 * PI * radius
+    Round to 3 decimal places -->
+<h2>Circle</h2>
+<p>Circle Radius: {{ @radius }}</p>
+<p>Circumference: {{ round(pi() * (@radius * @radius), 3) }}</p>
+
+<h2>Favorite Fruits</h2>
+<ul>
+<repeat group="{{ @fruits }}" value="{{ @fruit }}">
+        <li>{{ @fruit }}</li>
+</repeat>
+</ul>
+
+<!--Display vegetables as an Ordered list-->
+<h2>Favorite Vegetables</h2>
+<ol>
+<repeat group="{{ @veggies }}" value="{{ @veg }}">
+        <li>{{ @veg }}</li>
+</repeat>
+</ol>
+
+<!--Display associative array-->
+<h2>Cupcakes</h2>
+<repeat group="{{ @cupcakes }}" key="{{ @shortcut }}" value="{{ @label }}">
+    <label><input type="checkbox" value="{{ @shortcut }}" name="cupcakes[]">{{ @label }}</label><br>
+</repeat>
+
 
 </body>
 </html>
