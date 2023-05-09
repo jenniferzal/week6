@@ -1,0 +1,12 @@
+{
+  "name": "jenniferzaldivar/328/week6",
+  "authors": [
+    {
+      "name": "Jennifer Zaldivar",
+      "email": "zaldivar.jennifer@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
